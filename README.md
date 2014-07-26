@@ -1,4 +1,8 @@
-Anime-Manga-search
+Anime/Manga search
 ==================
 
-Search for anime and manga from popular locations
+#####An application made for searching anime and manga using various web APIs.
+
+Web APIs used to collect data:
+* [MyAnimeList] (http://www.myanimelist.net)
+* [Anime News Network] (http://www.AnimeNewsNetwork.com)
