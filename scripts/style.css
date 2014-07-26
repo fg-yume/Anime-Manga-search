@@ -1,0 +1,59 @@
+body
+{
+	background-color: #40E0D0;
+}
+
+section
+{
+	width: 50%;
+	margin: auto;
+}
+
+.outer
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #B23900;
+	padding: 15px;
+}
+
+.inner
+{
+	width: 40%;
+	height: 100%;
+	color: #FFF;
+	font-family: 'Average', serif;
+	display: inline-block;
+}
+
+.score
+{
+	width: 15%;
+	color: #000;
+	font-family: 'Average', serif;
+	display: inline-block;
+	text-align:center;
+}
+
+ul
+{
+	font-size: 120%;
+}
+
+p
+{
+	font-size: 150%;
+}
+
+/* Win8 buttons
+ *
+ * Source: http://jsfiddle.net/kevinPHPkevin/ksM5Y/
+ */
+ #searchButton
+ {
+	background-color: #FFF;`
+	
+	transition: 0.2s all ease;
+	-moz-transition: 0.2s all ease;
+	-webkit-transition: 0.2s all ease;
+ }
