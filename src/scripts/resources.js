@@ -5,10 +5,12 @@
  *	Freddy Garcia
  *
  * Source:
- *	Varies
+ *	Various
  *
  * Various external resources that are used in other javascript files
  */
+ 
+ "use strict";
  
 // Globals
 var parseXML;
