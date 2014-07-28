@@ -7,9 +7,8 @@
  * Source:
  *	Various
  *
- * Various external resources that are used in other javascript files
+ * Various external resources that are used in other JavaScript files
  */
- 
  "use strict";
  
 // Globals
@@ -311,9 +310,6 @@ var ENTITY_NAME = new Array(
 "&hearts;",
 "&diams;"
 );
-
-//console.log("Entity Number length: " + ENTITY_NUMBER.length);
-//console.log("Entity Name length: " + ENTITY_NAME.length);
  
 /*
  * Source: http://stackoverflow.com/questions/1026069/capitalize-the-first-letter-of-string-in-javascript

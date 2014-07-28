@@ -14,9 +14,11 @@
  
 // Globals
 var MAL_API_URL = "http://myanimelist.net/api/anime/search.xml?";
-var PROXY_MAL_PHP = "scripts/mal_request.php?filename=";
+var PROXY_MAL_PHP = "scripts/mal_request.php?";
 
 var MALSearchQuery;
+var MALUsername;
+var MALPassword;
 
 /*
  * Sets the correct query for the PHP based on what the user has searched
@@ -26,24 +28,28 @@ function findMALMedia()
 {
 	//Get user's search query from text box
 	MALSearchQuery = document.querySelector("#searchText").value;
+	MALUsername = document.querySelector("#username").value;
+	MALPassword = document.querySelector("#password").value;
+	
+	var username = "&username=" + MALUsername;
+	var password = "&password=" + MALPassword;
+	var credentials = username + password;
 	
 	//Add PHP scripts and api-specific query to the url
 	var finalMALURL = MAL_API_URL + "q=" + MALSearchQuery;
 	
 	//Replace spaces in search with +'s for the url query
 	finalMALURL = replaceString(finalMALURL, " ", "+");
-	
-	//encode urls to preserve special characters in PHP
 	finalMALURL = encodeURIComponent(finalMALURL);
 	
-	console.log(finalMALURL);
+	var url = PROXY_MAL_PHP + "filename=" + finalMALURL + credentials;
 	
 	// Pull in the XML from MAL using PHP
 	$.ajax
 	(
 		{
 			type: "GET",
-			url: PROXY_MAL_PHP + finalMALURL,
+			url: url,
 			dataType: "text",
 			success:function(xml){
 				onMALLoaded(xml);

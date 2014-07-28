@@ -41,9 +41,34 @@
 		//This shuts down the current php script
 		exit();
 	}
+	
+	// store credentials if provided
+	if(array_key_exists('username', $_REQUEST))
+		$username = $_REQUEST['username'];
+	
+	// exit if credentials not provided	
+	else
+	{
+		echo "<strong>Need <em>username</em> to fetch!</strong";
+		
+		// shut down
+		exit();
+	}
+	
+	if(array_key_exists('password', $_REQUEST))
+		$password = $_REQUEST['password'];
+	
+	// exit if credentials not provided	
+	else
+	{
+		echo "<strong>Need <em>password</em> to fetch!</strong";
+		
+		// shut down
+		exit();
+	}
 	 
 	// Variables that will be used for cURL settings
-	$credentials = "Kiraboshi100:sasuga";
+	$credentials = $username . ":" . $password;
 	$userAgent = "api-edu-cf53d4f1524ab61c35bc529a600f755c";
 	
 	$headers = array
@@ -82,7 +107,7 @@
 		
 		else
 		{
-			// echo's the recieved data
+			// echo's the received data
 			echo $fileData;
 		}
 		

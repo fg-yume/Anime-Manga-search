@@ -13,26 +13,30 @@
  *	Anime News Network (http://www.animenewsnetwork.com)
  *	MyAnimeList (http://www.myanimelist.net)
  *
- * Sends GET requests based on user input, and populates HTML page with the received files
+ * Adds event listeners to the page to support its functionality
  *
  *	Notes:
  *		ANN: Anime News Network
  *		MAL: MyAnimeList
  */
-
 "use strict";
 
-// entry point
-$(document).ready(init);
+// Encapsulate the application within this variable
+var app = app || {};
 
-function init()
+// Globals
+app.searchQuery = ""; // the anime/manga query that the user has requested
+
+/*
+ * Sets up page functionality with event listeners
+ */
+app.init = function()
 {
 	var searchButton = document.querySelector('#searchButton');
+	
+	searchButton.addEventListener('click', findMALMedia, false);
+	searchButton.addEventListener('click', findANNMedia, false);
+};
 
-	// Event Listeners
-	// Requires:
-	//	mal.js
-	//	ann.js
-	searchButton.addEventListener('click', findMALMedia);
-	searchButton.addEventListener('click', findANNMedia);
-}
+// entry point
+window.addEventListener('load', app.init, false);
